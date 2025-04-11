@@ -65,6 +65,7 @@ p {
     color: var(--text-light);
 }
 
+/* Theme Toggle - Updated Positioning */
 .theme-toggle {
     position: fixed;
     top: 20px;
@@ -75,9 +76,12 @@ p {
     padding: 8px;
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
 }
 
 .light-mode .theme-toggle {
@@ -112,6 +116,7 @@ p {
     display: none;
 }
 
+/* Navigation - Updated for Full Name Display */
 nav {
     position: fixed;
     top: 0;
@@ -142,10 +147,13 @@ nav {
 .nav-logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Slightly reduced for better fit */
     color: var(--primary-dark);
     font-family: 'Orbitron', sans-serif;
     text-decoration: none;
+    white-space: nowrap;
+    overflow: visible;
+    max-width: none;
 }
 
 .light-mode .nav-logo {
@@ -156,6 +164,12 @@ nav {
     height: 40px;
     margin-right: 10px;
     border-radius: 50%;
+}
+
+.nav-logo span {
+    display: inline-block;
+    overflow: visible;
+    text-overflow: clip;
 }
 
 .nav-links {
@@ -211,6 +225,77 @@ nav {
     color: var(--primary-light);
 }
 
+/* Mobile Menu - Updated Positioning */
+@media (max-width: 768px) {
+    .nav-content {
+        padding-right: 140px; /* More space for buttons */
+        padding-left: 1rem;
+    }
+    
+    .theme-toggle {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+    }
+    
+    .mobile-menu-toggle {
+        position: absolute;
+        right: 70px; /* Positioned left of theme toggle */
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        color: var(--text-dark);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .light-mode .mobile-menu-toggle {
+        color: var(--text-light);
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem; /* Smaller font for mobile */
+        max-width: calc(100% - 150px);
+        overflow: visible;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--card-bg-dark);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .light-mode .nav-links {
+        background: var(--card-bg-light);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Rest of your existing CSS remains the same */
 section {
     min-height: 100vh;
     padding: 6rem 0;
@@ -722,80 +807,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Mobile Menu and Header Fixes */
-@media (max-width: 768px) {
-    .nav-content {
-        padding-right: 120px; /* Space for both buttons */
-        padding-left: 1rem;
-    }
-    
-    .theme-toggle {
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        z-index: 1002;
-    }
-    
-    .mobile-menu-toggle {
-        position: absolute;
-        right: 70px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: block;
-        background: none;
-        border: none;
-        color: var(--text-dark);
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 1001;
-    }
-    
-    .light-mode .mobile-menu-toggle {
-        color: var(--text-light);
-    }
-    
-    .nav-logo {
-        max-width: calc(100% - 140px);
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: var(--card-bg-dark);
-        position: absolute;
-        top: 80px;
-        left: 0;
-        padding: 1rem;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    
-    .light-mode .nav-links {
-        background: var(--card-bg-light);
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-links li {
-        margin: 0.5rem 0;
-    }
-    
-    .light-mode .nav-links a {
-        color: var(--text-light);
-    }
-    
-    .light-mode .nav-links a:hover {
-        color: var(--primary-light);
-    }
-}
-
+/* Additional Mobile Responsiveness */
 @media (max-width: 992px) {
     #home h1 {
         font-size: 2.5rem;
@@ -803,30 +815,6 @@ html {
     
     .section-content {
         padding: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    #home h1 {
-        font-size: 2rem;
-    }
-
-    .profile-image-container {
-        width: 200px;
-        height: 200px;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-    
-    .skills-row, .tools-row {
-        gap: 1.5rem;
-    }
-
-    .skill-icon img, .tool-icon img {
-        width: 60px;
-        height: 60px;
     }
 }
 
@@ -847,15 +835,6 @@ html {
     .projects-grid {
         grid-template-columns: 1fr;
     }
-    
-    .skills-row, .tools-row {
-        gap: 1rem;
-    }
-    
-    .skill-icon img, .tool-icon img {
-        width: 50px;
-        height: 50px;
-    }
 }
 
 @media (max-width: 400px) {
@@ -872,29 +851,15 @@ html {
         padding: 1rem;
     }
     
-    .skill-icon img, 
-    .tool-icon img {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .social-media a {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
     .nav-content {
-        padding-right: 100px;
+        padding-right: 120px;
     }
     
     .mobile-menu-toggle {
         right: 60px;
     }
-}
-
-@media (max-width: 768px) {
-    input, select, textarea {
-        font-size: 16px;
+    
+    .nav-logo {
+        font-size: 1.1rem;
     }
 }
