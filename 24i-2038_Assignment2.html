@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Document on HTML and CSS</title>
+    <link rel="icon" href="secure-shield.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            
+            --primary-dark: #1a73e8;
+            --secondary-dark: #34a853;
+            --accent-dark: #fbbc05;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --card-bg-dark: #1e1e1e;
+            --text-dark: #e8eaed;
+            --text-muted-dark: #9aa0a6;
+            
+            
+            --primary-light: #1a73e8;
+            --secondary-light: #34a853;
+            --accent-light: #fbbc05;
+            --light-bg: #f8f9fa;
+            --lighter-bg: #ffffff;
+            --card-bg-light: #ffffff;
+            --text-light: #202124;
+            --text-muted-light: #5f6368;
+            
+            
+            --transition: all 0.3s ease-in-out;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --box-shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        body.light-mode {
+            background-color: var(--light-bg);
+            color: var(--text-light);
+        }
+
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .light-mode header {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        
+        .content {
+            display: flex;
+            max-width: 1400px;
+            margin: 2rem auto;
+            gap: 2rem;
+        }
+
+       
+        aside {
+            width: 280px;
+            background-color: var(--card-bg-dark);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 100px;
+            height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+
+        .light-mode aside {
+            background-color: var(--card-bg-light);
+        }
+
+        aside h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--primary-dark);
+            padding-bottom: 0.5rem;
+        }
+
+        .light-mode aside h2 {
+            color: var(--primary-light);
+            border-color: var(--primary-light);
+        }
+
+        aside ul {
+            list-style-type: none;
+        }
+
+        aside ul li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        aside ul li::before {
+            content: "•";
+            color: var(--primary-dark);
+            position: absolute;
+            left: 0;
+        }
+
+        .light-mode aside ul li::before {
+            color: var(--primary-light);
+        }
+
+        aside ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            display: block;
+            padding: 0.3rem 0;
+        }
+
+        .light-mode aside ul li a {
+            color: var(--text-light);
+        }
+
+        aside ul li a:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        .light-mode aside ul li a:hover {
+            color: var(--primary-light);
+        }
+
+        
+        main {
+            flex: 1;
+            background-color: var(--card-bg-dark);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .light-mode main {
+            background-color: var(--card-bg-light);
+        }
+
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 120px;
+        }
+
+        section h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .light-mode section h2 {
+            color: var(--primary-light);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        section p {
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        .light-mode section p {
+            color: var(--text-light);
+        }
+
+        section h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary-dark);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .light-mode section h3 {
+            color: var(--secondary-light);
+        }
+
+       
+        b, strong {
+            color: var(--accent-dark);
+        }
+
+        .light-mode b, .light-mode strong {
+            color: var(--accent-light);
+        }
+
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .light-mode footer {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+        }
+
+       
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .light-mode .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle i {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .light-mode .theme-toggle i {
+            color: var(--text-light);
+        }
+
+        .theme-toggle .sun {
+            display: none;
+            color: #fbbc05;
+        }
+
+        .light-mode .theme-toggle .sun {
+            display: block;
+        }
+
+        .light-mode .theme-toggle .moon {
+            display: none;
+        }
+
+       
+        @media (max-width: 992px) {
+            .content {
+                flex-direction: column;
+                padding: 0 1.5rem;
+            }
+            
+            aside {
+                width: 100%;
+                position: static;
+                height: auto;
+                margin-bottom: 1.5rem;
+            }
+            
+            main {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            section h2 {
+                font-size: 1.5rem;
+            }
+            
+            section h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun sun"></i>
+        <i class="fas fa-moon moon"></i>
+    </div>
+
+    <header>
+        <h1 class="fade-in">Technical Document on HTML and CSS</h1>
+    </header>
+
+    <div class="content">
+        <aside>
+            <nav>
+                <h2 class="fade-in">Table Of Contents</h2>
+                <ul>
+                    <li class="fade-in delay-1"><a href="#section1">HTML Basics</a></li>
+                    <li class="fade-in delay-2"><a href="#section2">What is HTML</a></li>
+                    <li class="fade-in delay-3"><a href="#section3">CSS Flexbox</a></li>
+                    <li class="fade-in delay-4"><a href="#section4">CSS Grid</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section id="section1" class="fade-in">
+                <h2>HTML Basics</h2>
+                <p>HTML (HyperText Markup Language) is the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. As the title suggests, this article will give you a basic understanding of HTML and its functions.</p>
+            </section>
+
+            <section id="section2" class="fade-in delay-1">
+                <h2>What Is HTML?</h2>
+                <p>HTML is a markup language that defines the structure of your content. HTML consists of a series of elements, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way. The enclosing tags can make a word or image hyperlink to somewhere else, can italicize words, can make the font bigger or smaller, and so on.</p>
+                <p>The main parts of our element are as follows:</p>
+                <h3>1. The opening tag:</h3>
+                <p>This consists of the name of the element (in this case, p), wrapped in opening and closing angle brackets. This states where the element begins or starts to take effect — in this case where the paragraph begins.</p> 
+                <h3>2. The closing tag:</h3>
+                <p>This is the same as the opening tag, except that it includes a forward slash before the element name. This states where the element ends — in this case where the paragraph ends. Failing to add a closing tag is one of the standard beginner errors and can lead to strange results.</p>
+                <h3>3. The content:</h3>
+                <p>This is the content of the element, which in this case, is just text.</p>
+                <h3>4. The element:</h3>
+                <p>The opening tag, the closing tag, and the content together comprise the element.</p>
+            </section>
+
+            <section id="section3" class="fade-in delay-2">
+                <h2>CSS Flexbox</h2>
+                <p>CSS Flexbox is a layout model that allows items in a container to align and distribute space efficiently. It's great for responsive designs.</p>
+                <h3>1. Layout Module:</h3>
+                <p>Before the Flexbox Layout module, there were four layout modes:</p>
+                <p><b>• Block:</b> for sections in a webpage</p>
+                <p><b>• Inline:</b> for text</p>
+                <p><b>• Table:</b> for two-dimensional table data</p>
+                <p><b>• Positioned:</b> for explicit position of an element</p>
+                <h3>2. Browser Support:</h3>
+                <p>The flexbox properties are supported in all modern browsers:</p>
+                <p><b>• Chrome</b></p>
+                <p><b>• Edge</b></p>
+                <p><b>• Safari</b></p>
+                <p><b>• Firefox</b></p>
+            </section>
+
+            <section id="section4" class="fade-in delay-3">
+                <h2>CSS Grid</h2>
+                <p>CSS Grid Layout is a two-dimensional layout system for the web. It lets you design web pages by placing items in rows and columns.</p>
+                <h3>1. Grid Layout:</h3>
+                <p>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning</p>
+                <h3>2. Grid Elements:</h3>
+                <p>A grid layout consists of a parent element, with one or more child elements.</p>
+                <h3>3. Display Property:</h3>
+                <p>An HTML element becomes a grid container when its display property is set to <b>grid</b> or <b>inline-grid</b>.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="fade-in delay-4">
+        <p>&copy; 2024 IICT - FAST Islamabad (By Usman Ibrahim)</p>
+    </footer>
+
+    <script>
+       
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+       
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+       
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        }
+
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
