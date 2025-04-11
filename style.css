@@ -184,6 +184,11 @@ nav {
     color: var(--text-light);
 }
 
+.light-mode .nav-links {
+    background: var(--card-bg-light);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
 .nav-links a::after {
     content: '';
     position: absolute;
