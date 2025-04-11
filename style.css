@@ -843,3 +843,83 @@ footer p {
 html {
     scroll-behavior: smooth;
 }
+
+@media (max-width: 400px) {
+    #home h1 {
+        font-size: 1.5rem;
+    }
+    
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .section-content {
+        padding: 1rem;
+    }
+    
+    .skill-icon img, 
+    .tool-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-media a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+
+.nav-links a, 
+.project-btn, 
+.submit-btn {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--card-bg-dark);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-dark);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .light-mode .mobile-menu-toggle {
+        color: var(--text-light);
+    }
+}

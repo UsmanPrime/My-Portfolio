@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -387,4 +388,395 @@
     </script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies Collection</title>
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2E8B57;
+            --secondary-color: #3A5F0B;
+            --accent-color: #FF7F50;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --danger-color: #dc3545;
+            --success-color: #28a745;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            width: 100%;
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .logo {
+            height: 60px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            border: 3px solid var(--light-color);
+        }
+
+        .container, .custom-list, .prompt-container, .name-container {
+            max-width: 500px;
+            width: 90%;
+            padding: 2rem;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            margin: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .activity-item {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .activity-item:hover {
+            transform: translateX(5px);
+            background-color: var(--secondary-color);
+        }
+
+        .btn {
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            color: var(--light-color);
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+        }
+
+        footer {
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            color: var(--light-color);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0 0.5rem;
+            transition: var(--transition);
+        }
+
+        .delete-btn:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        .counter {
+            font-size: 0.8rem;
+            color: var(--light-color);
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            margin-left: 0.5rem;
+        }
+
+        .no-hobbies {
+            color: #6c757d;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .action-buttons .btn {
+            flex: 1;
+            margin-top: 0;
+        }
+
+        @media (max-width: 480px) {
+            .container, .custom-list, .prompt-container, .name-container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="hobbies-icon.png" alt="Hobbies Logo" class="logo">
+        <h1>Welcome to My Hobbies Collection</h1>
+    </header>
+
+    <div class="container">
+        <h2>My Favorite Hobbies</h2>
+        <ul id="default-hobbies">
+            <li class="activity-item">
+                <span>Travelling</span>
+                <span class="counter">1</span>
+            </li>
+            <li class="activity-item">
+                <span>Playing Cricket</span>
+                <span class="counter">2</span>
+            </li>
+            <li class="activity-item">
+                <span>Gardening</span>
+                <span class="counter">3</span>
+            </li>
+            <li class="activity-item">
+                <span>Coding</span>
+                <span class="counter">4</span>
+            </li>
+        </ul>
+        <button class="btn" onclick="togglePrompt(true)">Create Your Own Hobby List</button>
+    </div>
+
+    <div class="prompt-container" style="display: none;">
+        <p>Would you like to create your personalized hobby list?</p>
+        <div class="action-buttons">
+            <button class="btn" onclick="toggleNameInput(true)">Yes, Let's Go!</button>
+            <button class="btn btn-secondary" onclick="togglePrompt(false)">Not Now</button>
+        </div>
+    </div>
+
+    <div class="name-container" style="display: none;">
+        <p>Please enter your name to personalize your list:</p>
+        <input type="text" id="user-name" placeholder="Your Name" autofocus>
+        <div class="action-buttons">
+            <button class="btn" onclick="submitName()">Continue</button>
+            <button class="btn btn-secondary" onclick="toggleNameInput(false)">Cancel</button>
+        </div>
+    </div>
+
+    <div class="custom-list" style="display: none;">
+        <h2 id="user-hobby-heading">Your Personal Hobby List</h2>
+        <p id="no-hobbies" class="no-hobbies">Your hobby list is empty. Add your first hobby below!</p>
+        <input type="text" id="activity-input" placeholder="Enter a hobby you enjoy" autocomplete="off">
+        <div class="action-buttons">
+            <button class="btn" onclick="addActivity()">Add Hobby</button>
+            <button class="btn btn-danger" onclick="clearAllActivities()">Clear All</button>
+        </div>
+        <ul id="user-activity-list"></ul>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Hobbies Collection. All rights reserved.</p>
+    </footer>
+
+    <script>
+       
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        function togglePrompt(show) {
+            document.querySelector(".prompt-container").style.display = show ? "block" : "none";
+            if (show) {
+                document.querySelector(".container").style.opacity = "0.7";
+            } else {
+                document.querySelector(".container").style.opacity = "1";
+            }
+        }
+
+        function toggleNameInput(show) {
+            document.querySelector(".name-container").style.display = show ? "block" : "none";
+            togglePrompt(false);
+            if (show) {
+                document.querySelector(".container").style.opacity = "0.7";
+            } else {
+                document.querySelector(".container").style.opacity = "1";
+            }
+        }
+
+        function submitName() {
+            const name = document.getElementById("user-name").value.trim();
+            if (name) {
+                document.querySelector(".custom-list").style.display = "block";
+                document.getElementById("user-hobby-heading").textContent = `${name}'s Hobby List`;
+                document.querySelector(".name-container").style.display = "none";
+                document.querySelector(".container").style.opacity = "1";
+                document.getElementById("activity-input").focus();
+            } else {
+                alert("Please enter your name to continue.");
+                document.getElementById("user-name").focus();
+            }
+        }
+
+        function addActivity() {
+            const activityInput = document.getElementById("activity-input");
+            const activity = activityInput.value.trim();
+            
+            if (activity) {
+                const list = document.getElementById("user-activity-list");
+                const itemCount = list.children.length + 1;
+                
+                const newItem = document.createElement("li");
+                newItem.className = "activity-item";
+                newItem.innerHTML = `
+                    <span>${activity}</span>
+                    <span class="counter">${itemCount}</span>
+                    <button class="delete-btn" onclick="removeActivity(this)">×</button>
+                `;
+                
+                list.appendChild(newItem);
+                document.getElementById("no-hobbies").style.display = "none";
+                activityInput.value = "";
+                activityInput.focus();
+                
+                
+                newItem.style.opacity = "0";
+                setTimeout(() => {
+                    newItem.style.transition = "opacity 0.3s ease";
+                    newItem.style.opacity = "1";
+                }, 10);
+            } else {
+                alert("Please enter a hobby before adding.");
+                activityInput.focus();
+            }
+        }
+
+        function removeActivity(button) {
+            const listItem = button.closest('li');
+            listItem.style.transform = "translateX(100%)";
+            listItem.style.opacity = "0";
+            
+            setTimeout(() => {
+                listItem.remove();
+                const list = document.getElementById("user-activity-list");
+                
+                
+                Array.from(list.children).forEach((item, index) => {
+                    item.querySelector('.counter').textContent = index + 1;
+                });
+                
+                if (list.children.length === 0) {
+                    document.getElementById("no-hobbies").style.display = "block";
+                }
+            }, 300);
+        }
+
+        function clearAllActivities() {
+            const list = document.getElementById("user-activity-list");
+            if (list.children.length > 0) {
+                if (confirm("Are you sure you want to clear all hobbies?")) {
+                    list.innerHTML = "";
+                    document.getElementById("no-hobbies").style.display = "block";
+                }
+            } else {
+                alert("Your hobby list is already empty.");
+            }
+        }
+
+        
+        document.getElementById("activity-input").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                addActivity();
+            }
+        });
+    </script>
+</body>
+
+>>>>>>> 19e9bf292ef5214f478ddae9501d33fc88b86db0
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -197,4 +198,205 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Usman Ibrahim</title>
+    <link rel="icon" href="secure-shield.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to thank-you page */
+        #thank-you {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(52, 168, 83, 0.1));
+        }
+
+        .thank-you-container {
+            max-width: 800px;
+            padding: 4rem 2rem;
+            background: var(--card-bg-dark);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .light-mode .thank-you-container {
+            background: var(--card-bg-light);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .thank-you-icon {
+            font-size: 5rem;
+            color: var(--secondary-dark);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .light-mode .thank-you-icon {
+            background: linear-gradient(to right, var(--primary-light), var(--secondary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .thank-you-heading {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .light-mode .thank-you-heading {
+            background: linear-gradient(to right, var(--primary-light), var(--secondary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .thank-you-message {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .home-btn {
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--primary-dark), var(--secondary-dark));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+            z-index: 1;
+            text-decoration: none;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 247, 255, 0.5);
+        }
+
+        .light-mode .home-btn {
+            background: linear-gradient(45deg, var(--primary-light), var(--secondary-light));
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .thank-you-heading {
+                font-size: 2rem;
+            }
+            
+            .thank-you-message {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .thank-you-heading {
+                font-size: 1.8rem;
+            }
+            
+            .thank-you-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark/Light Mode Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun sun"></i>
+        <i class="fas fa-moon moon"></i>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="nav-logo">
+                <img src="secure-shield.png" alt="Cyber Security Logo">
+                <span>Usman Ibrahim</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="thank-you" class="active">
+        <div class="container section-content">
+            <div class="thank-you-container fade-in">
+                <i class="fas fa-check-circle thank-you-icon"></i>
+                <h1 class="thank-you-heading fade-in delay-1">Thank You!</h1>
+                <p class="thank-you-message fade-in delay-2">Your message has been successfully sent. I appreciate you taking the time to reach out and will get back to you as soon as possible. In the meantime, feel free to explore more of my work or connect with me on social media.</p>
+                <a href="index.html" class="home-btn fade-in delay-3">Return to Homepage</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Usman Ibrahim. All rights reserved.</p>
+            <p>Cyber Security Specialist | Digital Defense Expert | Security Consultant</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Apply fade-in animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+>>>>>>> 19e9bf292ef5214f478ddae9501d33fc88b86db0
 </html>
